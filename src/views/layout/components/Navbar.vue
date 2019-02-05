@@ -4,6 +4,7 @@
     <breadcrumb />
     <el-dropdown class="avatar-container" trigger="click">
       <div class="avatar-wrapper">
+        <span style="font-size: 30px;">{{name}}</span>
         <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
         <i class="el-icon-caret-bottom"/>
       </div>
@@ -27,6 +28,11 @@ import Breadcrumb from '@/components/Breadcrumb'
 import Hamburger from '@/components/Hamburger'
 
 export default {
+  data(){
+    return{
+      name:'',
+    }
+  },
   components: {
     Breadcrumb,
     Hamburger
@@ -36,6 +42,9 @@ export default {
       'sidebar',
       'avatar'
     ])
+  },
+  created(){
+    this.name=this.$store.getters.name;
   },
   methods: {
     toggleSideBar() {

@@ -5,6 +5,7 @@
   "description": "A vue admin template with Element UI & axios & iconfont & permission control & lint",
   "author": "Pan <panfree23@gmail.com>",
   "scripts": {
+    "mock": "json-server -w ./src/mock/mock.json",
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node build/build.js",
@@ -17,6 +18,7 @@
     "axios": "0.18.0",
     "element-ui": "2.4.6",
     "js-cookie": "2.2.0",
+    "json-server": "^0.14.2",
     "normalize.css": "7.0.0",
     "nprogress": "0.2.0",
     "vue": "2.5.17",
@@ -47,6 +49,7 @@
     "friendly-errors-webpack-plugin": "1.7.0",
     "html-webpack-plugin": "4.0.0-alpha",
     "mini-css-extract-plugin": "0.4.1",
+    "mockjs": "^1.0.1-beta3",
     "node-notifier": "5.2.1",
     "node-sass": "^4.7.2",
     "optimize-css-assets-webpack-plugin": "5.0.0",

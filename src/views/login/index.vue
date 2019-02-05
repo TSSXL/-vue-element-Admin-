@@ -148,7 +148,8 @@ $light_gray:#eee;
   position: fixed;
   height: 100%;
   width: 100%;
-  background-color: $bg;
+  background-image: url("timg.jpg");
+  background-size: 100% 100%;
   .login-form {
     position: absolute;
     left: 0;
