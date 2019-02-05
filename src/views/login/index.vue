@@ -33,6 +33,7 @@
         <span> password: admin</span>
       </div>
     </el-form>
+    <img src="./timg.jpg" alt="" style="height:100%;width:100%;">
   </div>
 </template>
 
@@ -148,8 +149,6 @@ $light_gray:#eee;
   position: fixed;
   height: 100%;
   width: 100%;
-  background-image: url("timg.jpg");
-  background-size: 100% 100%;
   .login-form {
     position: absolute;
     left: 0;
