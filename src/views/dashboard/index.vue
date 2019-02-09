@@ -50,8 +50,8 @@
         <li>认同互联网这个行业，并觉得从事互联网行业是个明智的选择</li>
       </ul>
       <div>
-        <el-button type="primary"  style="position: absolute;margin: 5% 25%;background-color: #5A5858" @click="btn">点我查看</el-button>
-        <el-button type="primary"  style="margin: 5%  50%;background-color: #5A5858" @click="showMap">了解地区</el-button>
+        <el-button type="primary"  style="position: absolute;margin: 5% 20%;background-color: #5A5858" @click="btn">点我查看</el-button>
+        <el-button type="primary"  style="margin: 5%  54%;background-color: #5A5858" @click="showMap">了解地区</el-button>
       </div>
 
     </div>
@@ -110,7 +110,9 @@
       width="50%"
       :before-close="handleClose">
       <div class="amap-wrapper">
-        <el-amap class="amap-box" :vid="'amap-vue'"></el-amap>
+        <el-amap class="amap-box" :zoom="zoom" :center="center" :plugin="plugin"  :vid="'amap-vue'">
+          <el-amap-marker v-for="(marker, index) in markers" key="index" :position="marker.position"  :visible="marker.visible" :draggable="marker.draggable" :vid="index"></el-amap-marker>
+        </el-amap>
       </div>
     </el-dialog>
   </div>
@@ -124,6 +126,24 @@ export default {
   name: 'Dashboard',
 data(){
     return{
+      zoom:10,
+      plugin: [{
+        pName: 'ToolBar',
+        events: {
+          init(instance) {
+            console.log(instance);
+          }
+        }
+      }],
+      markers: [
+        {
+          position:  [121.553188, 29.873972],
+          visible: true,
+          draggable: true,
+          template: '<span>1</span>',
+        }
+      ],
+      center:  [121.553188, 29.873972],
       dialogVisibleTwo:false,
       dialogVisible:false,
       value7:[new Date(2016, 8, 1), new Date(2019,5, 1)],
@@ -176,8 +196,8 @@ data(){
   $rightColor:#444346;
   $color:#94CDDB;
   .amap-wrapper {
-    width: 665px;
-    height: 400px;
+    width: 100%;
+    height:465px;
   }
   .dashboard-container{
     margin-top: 5px;

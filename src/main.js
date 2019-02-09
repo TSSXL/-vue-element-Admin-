@@ -16,6 +16,7 @@ import VueAMap from 'vue-amap'
 import '@/icons' // icon
 import '@/permission' // permission control
 
+Vue.config.devtools=true
 Vue.use(ElementUI, { locale })
 
 Vue.use(VueAMap);
